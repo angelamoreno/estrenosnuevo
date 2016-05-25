@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="p"
+            type="com.angelayubulu.estrenosnuevo.models.Pelicula"
+            />
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent" android:layout_height="match_parent">
+<ImageView
+    android:id="@+id/img"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/img_H"
+    android:background="#444444"/>
+
+    <TextView
+        android:id="@+id/nombre"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/img"
+        android:textColor="#ffffff"
+        android:padding="@dimen/small"
+        android:text="@{pelicula.nombre}"
+        tools:text="Nombre Pelicula"/>
+
+    <TextView
+        style="@style/Base.TextAppearance.AppCompat.Body2"
+        android:id="@+id/sinopsis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{pelicula.sinopsis}"
+        android:maxLines="2"
+        android:ellipsize="end"
+        tools:text="Sinopsis de la pelicula"
+        android:layout_below="@id/img"/>
+    <ImageView
+        android:id="@+id/ic_duracion"
+        android:layout_width="@dimen/icon"
+        android:layout_height="@dimen/icon"
+        android:src="@drawable/ic_query"
+        android:layout_below="@id/sinopsis"
+        android:layout_marginLeft="@dimen/small"
+        android:layout_marginRight="@dimen/small"
+        android:layout_marginBottom="@dimen/small"/>
+    <TextView
+        style="@style/Base.TextAppearance.AppCompat.Body2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="2:30 min"
+        android:text="@{pelicula.duracion}"
+        android:layout_alignBottom="@id/ic_duracion"
+        android:layout_toRightOf="@id/ic_duracion"
+        />
+    <ImageView
+        android:id="@+id/ic_estreno"
+        android:layout_width="@dimen/icon"
+        android:layout_height="@dimen/icon"
+        android:layout_below="@id/ic_duracion"
+       android:layout_marginRight="@dimen/small"
+        android:layout_marginLeft="@dimen/small"
+        android:layout_marginBottom="@dimen/small"
+        android:src="@drawable/ic_event"
+        />
+    <TextView
+        style="@style/Base.TextAppearance.AppCompat.Body2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ic_estreno"
+        android:layout_toRightOf="@id/ic_estreno"
+        tools:text="11 de Mayo"/>
+</RelativeLayout>
+</layout>
